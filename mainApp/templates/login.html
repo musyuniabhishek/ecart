@@ -1,0 +1,31 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block title %}
+<title>ECart | Login</title>
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+    <div class="w-50 m-auto ">
+        <h4 class="text-center bg-primary p-3"><span class="text-success">Login</span> To Your Account</h4>
+        <form action="/login/" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter Username" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter Username" class="form-control">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success w-100">Login</button>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <a class="text-info" href="/forget-password-1/">Forget Password</a>
+                <a class="text-info" href="/signup/">New User? Create a Free Account</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

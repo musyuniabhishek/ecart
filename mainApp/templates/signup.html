@@ -1,0 +1,60 @@
+{% extends 'index.html'%}
+{% load static %}
+{% block title %}
+<title>ECart | Login</title>
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+    <div class="w-75 m-auto ">
+        <h4 class="text-center bg-primary p-3"><span class="text-success">Create</span> a Free Account</h4>
+        {% for m in messages %}
+        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">{{m}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        <form action="/signup/" method="post">
+            {% csrf_token %}
+            <div class=" row mb-3">
+                <div class="col-md-6">
+                    <label>Name</label>
+                    <input type="text" name="name" required placeholder="Enter Full name" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label>Username</label>
+                    <input type="text" name="username" required placeholder="Enter Username" class="form-control">
+                </div>
+            </div>
+            <div class=" row mb-3">
+                <div class="col-md-6">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder=" Enter Email Address" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label>Phone</label>
+                    <input type="text" name="phone" required placeholder="Enter Phone Number" class="form-control">
+                </div>
+            </div>
+            <div class=" row mb-3">
+                <div class="col-md-6">
+                    <label>Password</label>
+                    <input type="password" name="password" required placeholder=" Enter Password" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label>Confirm Password</label>
+                    <input type="password" name="cpassword" required placeholder="Confirm Password"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success w-100">Signup</button>
+            </div>
+            <div class="mb-3 d-flex justify-content-between">
+                <a class="text-info" href="/login/">Already User? Login To Your Account</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
