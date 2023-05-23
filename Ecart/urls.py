@@ -32,7 +32,7 @@ urlpatterns = [
     path("remove-from-cart/<str:num>/", mainApp.removeFromCartPage),
     path("update-cart/<str:num>/<str:op>/", mainApp.updateCartPage),
     path("checkout/", mainApp.checkoutPage),
-    path('paymentSuccess/<str:rppid>/<str:rpoid>/<str:rpsid>/',mainApp.paymentSuccessPage),
+    path('paymentSuccess/<str:rppid>/<str:rpoid>/<str:rpsid>/<int:checkid>',mainApp.paymentSuccessPage),
     path('re-payment/<str:checkid>/',mainApp.payAgainPage),
     path("place-order/", mainApp.placeOrderPage),
     path("confirmation/", mainApp.confirmationPage),
