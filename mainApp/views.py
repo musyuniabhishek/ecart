@@ -645,7 +645,7 @@ def profilePage(Request):
     if user.is_superuser:
         return HttpResponseRedirect("/admin/")
     else:
-        buyer = Buyer.objects.get(username=Request.user.username)
+        buyer = User.objects.get(username=Request.user.username)
         wishlist = Wishlist.objects.filter(buyer=buyer)
         checkout = Checkout.objects.filter(buyer=buyer)
         orders = []
