@@ -618,7 +618,7 @@ def payAgainPage(Request,checkid):
         check.paymentMode=2
         check.paymentStatus=2
         check.save()
-        return render(Request,"pay.html",{
+        return render(Request,"confirmation.html",{
             "amount":orderAmount,
             "api_key":RAZORPAY_API_KEY,
             "order_id":paymentId,
