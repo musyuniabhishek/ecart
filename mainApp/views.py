@@ -710,7 +710,7 @@ def signupPage(Request):
             except:
                 messages.error(Request, "Username Already taken")
 
-    return render(Request, "signup.html")
+    return render(Request, "profile.html")
 
 
 @login_required(login_url="/login/")
